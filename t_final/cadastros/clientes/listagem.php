@@ -1,11 +1,11 @@
 <?php
-if (isset($_GET["id"]))
-$id = $_GET["id"];
+if (isset($_GET["IDCliente"]))
+$id = $_GET["IDCliente"];
 
 try{
     if (isset($id)){
-        $stmt = $conn->prepare('SELECT clientes.* FROM clientes WHERE id = :id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt = $conn->prepare('SELECT clientes.* FROM clientes WHERE IDCliente = :IDCliente');
+        $stmt->bindParam(':IDCliente', $id, PDO::PARAM_STR_CHAR);
     }else {
         $stmt = $conn->prepare('SELECT clientes.* FROM clientes');
     }
@@ -24,11 +24,11 @@ try{
             foreach($result as $row){
                 ?>
                     <tr>
-                        <td><?=$row['id']?></td>
-                        <td><?=$row['nome']?></td>
+                        <td><?=$row['IDCliente']?></td>
+                        <td><?=$row['NomeCompanhia']?></td>
                         <td>
-                            <a href="?modulo=clientes&pagina=alterar&id=<?=$row['id']?>">Alterar</a>
-                            <a href="?modulo=clientes&pagina=deletar&id=<?=$row['id']?>">Excluir</a>
+                            <a href="?modulo=clientes&pagina=alterar&IDCliente=<?=$row['IDCliente']?>">Alterar</a>
+                            <a href="?modulo=clientes&pagina=deletar&IDCliente=<?=$row['IDCliente']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php
