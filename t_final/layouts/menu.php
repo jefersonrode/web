@@ -13,5 +13,6 @@ $resultado = $stmt->fetchAll();
             <?php
         }
     ?>
+        <a href="?sair=1" class="btn btn-link" >Sair</a>
     </div>
     <hr>

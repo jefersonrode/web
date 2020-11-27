@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['deletar'])){
     try {
-        $stmt = $conn->prepare("DELETE FROM clientes WHERE IDCliente = :IDCliente");
+        $stmt = $conn->prepare("on delete cascade FROM clientes WHERE IDCliente = :IDCliente");
         $stmt->execute(array('IDCliente' => $_GET['IDCliente']));
         ?>
             <div class="alert alert-success">
