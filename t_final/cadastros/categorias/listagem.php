@@ -12,7 +12,8 @@ try{
     $stmt->execute();
     $result = $stmt->fetchAll();
     ?>
-
+<div>Categoria</div>
+<hr>
 <table border="1" class="table table-striped">
     <tr>
         <td>Código</td>
@@ -29,7 +30,7 @@ try{
                         <td><?=$row['NomeCategoria']?></td>
                         <td><?=$row['Descricao']?></td>
                         <td>
-                            <a href="?modulo=categorias&pagina=alterar&IDCategoria=<?=$row['IDCategoria']?>">Alterar</a>
+                            <a class="btn btn-primary" href="?modulo=categorias&pagina=alterar&IDCategoria=<?=$row['IDCategoria']?>">Alterar</a>
                             <a href="?modulo=categorias&pagina=deletar&IDCategoria=<?=$row['IDCategoria']?>">Excluir</a>
                         </td>
                     </tr>

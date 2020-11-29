@@ -12,7 +12,8 @@ try{
     $stmt->execute();
     $result = $stmt->fetchAll();
 ?>
-
+<div>Funcionários</div>
+<hr>
 <table border="1" class="table table-striped">
     <tr>
         <td>Código</td>

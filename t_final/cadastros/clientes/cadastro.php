@@ -4,8 +4,24 @@ if (isset($_POST['gravar'])){
         $stmt = $conn->prepare('INSERT INTO clientes (IDCliente, NomeCompanhia, NomeContato, TituloContato, Endereco, Cidade, Regiao, CEP, Pais, Telefone,Fax) 
                                 VALUES (:IDCliente, :NomeCompanhia, :NomeContato, :TituloContato, :Endereco, :Cidade, :Regiao, :CEP, :Pais, :Telefone, :Fax)');
     
-    $stmt->execute(array('nome'   => $_POST["nome"]));
-
+    $stmt->execute(array(
+        'IDCliente'       => $_POST["IDCliente"],
+        'NomeCompanhia'   => $_POST["NomeCompanhia"],
+        'NomeContato'     => $_POST["NomeContato"],
+        'TituloContato'   => $_POST["TituloContato"],
+        'Endereco'        => $_POST["Endereco"],
+        'Cidade'          => $_POST["Cidade"],
+        'Regiao'          => $_POST["Regiao"],
+        'CEP'             => $_POST["CEP"],
+        'Pais'            => $_POST["Pais"],
+        'Telefone'        => $_POST["Telefone"],
+        'Fax'             => $_POST["Fax"]
+    ));
+    ?>
+    <div class="alert alert-success">
+                Sucesso! Registro Salvo.
+            </div>
+    <?php
     } catch(PDOException $e) {
         echo "Erro: {$e->getMessage()}";
     }
@@ -48,7 +64,7 @@ if (isset($_POST['gravar'])){
         </div>
         <div class="col-4">
             <label for="CEP" class="form-control-plaintext">CEP</label>
-            <input type="text" class="form-control" name="CEP" id="CEP" placeholder="CEP" required>
+            <input type="number" class="form-control" name="CEP" id="CEP" placeholder="CEP" required>
         </div>
     </div>
     <div class="row">
@@ -62,7 +78,7 @@ if (isset($_POST['gravar'])){
         </div>
         <div class="col-4">
             <label for="Fax" class="form-control-plaintext">Fax</label>
-            <input type="number" class="form-control" name="Fax" id="Fax" placeholder="Fax" required>
+            <input type="number" class="form-control" name="Fax" id="Fax" placeholder="Fax" >
         </div>
     </div>
 

@@ -1,22 +1,23 @@
 <?php
-if (isset($_GET["IDTerritorio"]))
-$id = $_GET["IDTerritorio"];
+if (isset($_GET["IDRegiao"]))
+$id = $_GET["IDRegiao"];
 
 try{
     if (isset($id)){
-        $stmt = $conn->prepare('SELECT funcionarios_territorios.* FROM funcionarios_territorios WHERE IDTerritorio = :IDTerritorio');
-        $stmt->bindParam(':IDTerritorio', $id, PDO::PARAM_INT);
+        $stmt = $conn->prepare('SELECT regiao.* FROM regiao WHERE IDRegiao = :IDRegiao');
+        $stmt->bindParam(':IDRegiao', $id, PDO::PARAM_INT);
     }else {
-        $stmt = $conn->prepare('SELECT funcionarios_territorios.* FROM funcionarios_territorios');
+        $stmt = $conn->prepare('SELECT regiao.* FROM regiao');
     }
     $stmt->execute();
     $result = $stmt->fetchAll();
     ?>
-
+<div>Região</div>
+<hr>
 <table border="1" class="table table-striped">
     <tr>
-        <td>Código Territorio</td>
-        <td>Código Cliente</td>
+        <td>Código Região</td>
+        <td>Descrição Região</td>
         <td>Ações</td>
     </tr>
     <?php
@@ -24,11 +25,11 @@ try{
             foreach($result as $row){
                 ?>
                     <tr>
-                        <td><?=$row['IDTerritorio']?></td>
-                        <td><?=$row['IDFuncionario']?></td>
+                        <td><?=$row['IDRegiao']?></td>
+                        <td><?=$row['DescricaoRegiao']?></td>
                         <td>
-                            <a href="?modulo=funcionarios_territorios&pagina=alterar&IDTerritorio=<?=$row['IDTerritorio']?>">Alterar</a>
-                            <a href="?modulo=funcionarios_territorios&pagina=deletar&IDTerritorio=<?=$row['IDTerritorio']?>">Excluir</a>
+                            <a class="btn btn-primary" class="btn btn-primary" href="?modulo=regiao&pagina=alterar&IDRegiao=<?=$row['IDRegiao']?>">Alterar</a>
+                            <a class="btn btn-warning" href="?modulo=regiao&pagina=deletar&IDRegiao=<?=$row['IDRegiao']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php
