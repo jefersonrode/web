@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['deletar'])){
     try {
-        $stmt = $conn->prepare("delete FROM regiao WHERE IDRegiao = :IDRegiao");
+        $stmt = $conn->prepare( "delete FROM regiao WHERE IDRegiao = :IDRegiao;");
         $stmt->execute(array('IDRegiao' => $_GET['IDRegiao']));
         ?>
             <div class="alert alert-success">

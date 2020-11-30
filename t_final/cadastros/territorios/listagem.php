@@ -30,7 +30,7 @@ try{
                         <td><?=$row['DescricaoTerritorio']?></td>
                         <td><?=$row['IDRegiao']?></td>
                         <td>
-                            <a href="?modulo=territorios&pagina=alterar&IDTerritorio=<?=$row['IDTerritorio']?>">Alterar</a>
+                            <a class="btn btn-primary" href="?modulo=territorios&pagina=alterar&IDTerritorio=<?=$row['IDTerritorio']?>">Alterar</a>
                             <a href="?modulo=territorios&pagina=deletar&IDTerritorio=<?=$row['IDTerritorio']?>">Excluir</a>
                         </td>
                     </tr>

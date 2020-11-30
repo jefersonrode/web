@@ -27,6 +27,11 @@ if (isset($_POST['salvar'])){
 ?>
 
 <form method="post">
+    <div>
     <input type="text" name="DescricaoRegiao" value="<?=$regiao[0]['DescricaoRegiao']?>">
-    <input type="submit" name="salvar" value="Salvar">
+    </div>
+
+    <br>
+    <input class="btn btn-primary" type="submit" name="salvar" value="Salvar">
+    <hr>
 </form>
