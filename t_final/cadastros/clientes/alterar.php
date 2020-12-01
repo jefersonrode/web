@@ -40,10 +40,12 @@ if (isset($_POST['salvar'])){
     $pessoa = $stmt->fetchAll();
 ?>
 
+<div>
+    Alterar cadastro do Clientes
+</div>
+<hr>
 <form method="post">
-    
     <div class="row">
-        
         <div class="col-9">
             <label for="NomeCompanhia" class="form-control-plaintext">Nome da Companhia</label>
             <input type="text" class="form-control" name="NomeCompanhia" value="<?=$pessoa[0]['NomeCompanhia']?>" required>
@@ -89,5 +91,5 @@ if (isset($_POST['salvar'])){
     </div>
 <br>
     <input class="btn btn-primary" type="submit" name="salvar" value="Salvar">
-    <hr>
+<hr>
 </form>

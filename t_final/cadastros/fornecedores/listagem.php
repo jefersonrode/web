@@ -31,7 +31,7 @@ try{
                         <td><?=$row['NomeContato']?></td>
                         <td>
                             <a class="btn btn-primary" href="?modulo=fornecedores&pagina=alterar&IDFornecedor=<?=$row['IDFornecedor']?>">Alterar</a>
-                            <a href="?modulo=fornecedores&pagina=deletar&IDFornecedor=<?=$row['IDFornecedor']?>">Excluir</a>
+                            <a class="btn btn-warning" href="?modulo=fornecedores&pagina=deletar&IDFornecedor=<?=$row['IDFornecedor']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php

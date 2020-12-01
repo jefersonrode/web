@@ -28,11 +28,20 @@ if (isset($_POST['salvar'])){
     $stmt->execute();
     $territorio = $stmt->fetchAll();
 ?>
-
+<div>Alterar Cadastro do Território</div>
+<hr>
 <form method="post">
-    <input type="text" name="IDTerritorio" value="<?=$territorio[0]['IDTerritorio']?>">
-    <input type="text" name="DescricaoTerritorio" value="<?=$territorio[0]['DescricaoTerritorio']?>">
-    
+
+    <div class="row">
+        <div class="col-4">
+            <label for="IDTerritorio">ID do Território</label>
+            <input class="form-control" type="text" name="IDTerritorio" value="<?=$territorio[0]['IDTerritorio']?>">   
+        </div>
+        <div class="col-8">
+            <label for="IDTerritorio">Descricao do Território</label>
+            <input class="form-control" type="text" name="DescricaoTerritorio" value="<?=$territorio[0]['DescricaoTerritorio']?>">
+        </div>
+    </div>
     <?php
         $stmt = $conn->prepare('select * from regiao');
         $stmt->execute();
@@ -40,7 +49,7 @@ if (isset($_POST['salvar'])){
     ?>
 
     <div class="form-group">
-        <label for="IDRegiao">Codigo Região</label>
+        <label for="IDRegiao">Região</label>
         <select class="form-control" name="IDRegiao" id="IDRegiao">
             <option value="">** Selecione **</option>
             <?php

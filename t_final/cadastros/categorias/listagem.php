@@ -12,14 +12,16 @@ try{
     $stmt->execute();
     $result = $stmt->fetchAll();
     ?>
-<div>Categoria</div>
+<div>
+    Categoria
+</div>
 <hr>
 <table border="1" class="table table-striped">
     <tr>
         <td>Código</td>
         <td>Nome</td>
         <td>Descrição</td>
-        <td>Ações</td>
+        <td>Figura</td>
     </tr>
     <?php
         if (count($result)){
@@ -31,7 +33,7 @@ try{
                         <td><?=$row['Descricao']?></td>
                         <td>
                             <a class="btn btn-primary" href="?modulo=categorias&pagina=alterar&IDCategoria=<?=$row['IDCategoria']?>">Alterar</a>
-                            <a href="?modulo=categorias&pagina=deletar&IDCategoria=<?=$row['IDCategoria']?>">Excluir</a>
+                            <a class="btn btn-warning" href="?modulo=categorias&pagina=deletar&IDCategoria=<?=$row['IDCategoria']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php

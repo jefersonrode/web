@@ -25,7 +25,8 @@ if (isset($_POST['salvar'])){
     $stmt->execute();
     $regiao = $stmt->fetchAll();
 ?>
-
+<div>Alterar Descrição da Região</div>
+<hr>
 <form method="post">
     <div>
     <input type="text" name="DescricaoRegiao" value="<?=$regiao[0]['DescricaoRegiao']?>">

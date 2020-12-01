@@ -12,7 +12,7 @@ try{
     $stmt->execute();
     $result = $stmt->fetchAll();
     ?>
-<div>Categoria</div>
+<div>Território</div>
 <hr>
 <table border="1" class="table table-striped">
     <tr>
@@ -31,7 +31,7 @@ try{
                         <td><?=$row['IDRegiao']?></td>
                         <td>
                             <a class="btn btn-primary" href="?modulo=territorios&pagina=alterar&IDTerritorio=<?=$row['IDTerritorio']?>">Alterar</a>
-                            <a href="?modulo=territorios&pagina=deletar&IDTerritorio=<?=$row['IDTerritorio']?>">Excluir</a>
+                            <a class="btn btn-warning" href="?modulo=territorios&pagina=deletar&IDTerritorio=<?=$row['IDTerritorio']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php

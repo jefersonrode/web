@@ -29,7 +29,7 @@ try{
                         <td><?=$row['NomeCompanhia']?></td>
                         <td>
                             <a class="btn btn-primary" href="?modulo=clientes&pagina=alterar&IDCliente=<?=$row['IDCliente']?>">Alterar</a>
-                            <a href="?modulo=clientes&pagina=deletar&IDCliente=<?=$row['IDCliente']?>">Excluir</a>
+                            <a class="btn btn-warning" href="?modulo=clientes&pagina=deletar&IDCliente=<?=$row['IDCliente']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php

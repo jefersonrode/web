@@ -17,11 +17,13 @@ if (isset($_POST['gravar'])){
         'Telefone'        => $_POST["Telefone"],
         'Fax'             => $_POST["Fax"]
     ));
-    ?>
+?>
+
     <div class="alert alert-success">
-                Sucesso! Registro Salvo.
-            </div>
-    <?php
+        Sucesso! Registro Salvo.
+    </div>
+
+<?php
     } catch(PDOException $e) {
         echo "Erro: {$e->getMessage()}";
     }
@@ -30,8 +32,6 @@ if (isset($_POST['gravar'])){
 
 <label>Cadastro de Clientes</label>
 <hr>
-
-
 <form method="post">
     <div class="row">
         <div class="col-3">
@@ -81,7 +81,6 @@ if (isset($_POST['gravar'])){
             <input type="number" class="form-control" name="Fax" id="Fax" placeholder="Fax" >
         </div>
     </div>
-
 <br>
     <input class="btn btn-primary" type="submit" name="gravar" value="Gravar">
 </form>

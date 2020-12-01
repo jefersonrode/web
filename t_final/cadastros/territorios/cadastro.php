@@ -14,7 +14,8 @@ if (isset($_POST['gravar'])){
     }
 }
 ?>
-
+<div>Cadastrar Território</div>
+<hr>
 <form method="post">
     <div class="form-group">
         <label for="IDTerritorio">Código</label>

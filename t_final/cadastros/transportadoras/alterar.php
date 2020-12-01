@@ -26,9 +26,20 @@ if (isset($_POST['salvar'])){
     $stmt->execute();
     $transportadora = $stmt->fetchAll();
 ?>
-
+<div>Alterar Cadastro da Transportadoras</div>
+<hr>
 <form method="post">
-    <input type="text" name="NomeConpanhia" value="<?=$transportadora[0]['NomeConpanhia']?>">
-    <input type="text" name="Telefone" value="<?=$transportadora[0]['Telefone']?>">
+
+<div class="row">
+    <div class="col-4">
+        <label for="NomeConpanhia">Nome da Companhia</label>
+        <input class="form-control" type="text" name="NomeConpanhia" value="<?=$transportadora[0]['NomeConpanhia']?>">
+    </div>
+    <div class="col-8">
+        <label for="Telefone">Telefone</label>
+        <input class="form-control" type="text" name="Telefone" value="<?=$transportadora[0]['Telefone']?>">
+    </div>
+</div>
+<br>
     <input type="submit" name="salvar" value="Salvar">
 </form>

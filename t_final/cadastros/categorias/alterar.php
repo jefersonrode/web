@@ -3,7 +3,7 @@ if (isset($_POST['salvar'])){
     try {
         $stmt = $conn->prepare("update categorias set descricao = :descricao where IDCategoria = :IDCategoria");
         $stmt->execute(array(
-            'descricao' => $_POST['descricao'],
+            'descricao'   => $_POST['descricao'],
             'IDCategoria' => $_GET['IDCategoria']
         ));
         ?>
@@ -25,7 +25,10 @@ if (isset($_POST['salvar'])){
     $stmt->execute();
     $categorias = $stmt->fetchAll();
 ?>
-
+<div>
+    Alterar cadastro da Categoria
+</div>
+<hr>
 <form method="post">
     <input type="text" name="descricao" value="<?=$categorias[0]['Descricao']?>">
     <input type="submit" name="salvar" value="Salvar">

@@ -28,8 +28,8 @@ try{
                         <td><?=$row['IDFuncionario']?></td>
                         <td><?=$row['Nome']?> <?=$row['Sobrenome']?></td>
                         <td>
-                            <a href="?modulo=funcionarios&pagina=alterar&IDFuncionario=<?=$row['IDFuncionario']?>">Alterar</a>
-                            <a href="?modulo=funcionarios&pagina=deletar&IDFuncionario=<?=$row['IDFuncionario']?>">Excluir</a>
+                            <a class="btn btn-primary" href="?modulo=funcionarios&pagina=alterar&IDFuncionario=<?=$row['IDFuncionario']?>">Alterar</a>
+                            <a class="btn btn-warning" href="?modulo=funcionarios&pagina=deletar&IDFuncionario=<?=$row['IDFuncionario']?>">Excluir</a>
                         </td>
                     </tr>
                     <?php

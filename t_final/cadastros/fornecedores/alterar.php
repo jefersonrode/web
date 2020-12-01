@@ -25,7 +25,8 @@ if (isset($_POST['salvar'])){
     $stmt->execute();
     $fornecedores = $stmt->fetchAll();
 ?>
-
+<div>Alterar cadastro do Fornecedor</div>
+<hr>
 <form method="post">
     <input type="text" name="NomeCompanhia" value="<?=$fornecedores[0]['NomeCompanhia']?>">
     <input type="submit" name="salvar" value="Salvar">
