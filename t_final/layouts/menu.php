@@ -4,15 +4,23 @@ $stmt->execute();
 
 $resultado = $stmt->fetchAll();
 ?>
-
+<br>
 <div class="row">
-    <?php
-        foreach($resultado as $linha) {
-            ?>
-                <a href="<?=$linha['endereco']?>" class="<?=$linha['classe']?>"><?=$linha['descricao']?></a>
-            <?php
-        }
-    ?>
-        <a href="?sair=1" class="btn btn-link" >Sair</a>
+    <div class="dropdown col-11">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Menu Principal
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <?php
+            foreach($resultado as $linha) {
+                ?>
+                    <a class="dropdown-item" href="<?=$linha['endereco']?>" ><?=$linha['descricao']?></a>
+                <?php
+            }
+        ?>
+        </div>
     </div>
-    <hr>
+        <a class="btn btn-primary" href="?sair=1">Logout</a>
+</div>
+
+<hr>

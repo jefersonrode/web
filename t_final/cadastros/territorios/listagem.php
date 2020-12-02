@@ -14,7 +14,7 @@ try{
     ?>
 <div>Território</div>
 <hr>
-<table border="1" class="table table-striped">
+<table border="1" class="table table-dark">
     <tr>
         <td>Código do Território</td>
         <td>Descrição do Território</td>

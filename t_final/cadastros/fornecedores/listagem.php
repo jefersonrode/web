@@ -14,7 +14,7 @@ try{
     ?>
 <div>Fornecedores</div>
 <hr>
-<table border="1" class="table table-striped">
+<table border="1" class="table table-dark">
     <tr>
         <td>Código</td>
         <td>Nome</td>
